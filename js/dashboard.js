@@ -25,16 +25,3 @@ init();
 
 
 
-window.showSection=showSection;
-
-document.querySelectorAll('.side-link').forEach(a=>a.addEventListener('click',e=>{
-    e.preventDefault();
-    showSection(a.dataset.section);
-}));
-
-const mobileMenu = $('#mobileMenu');
-const sidebar = document.querySelector('.sidebar');
-
-mobileMenu.addEventListener('click', () => {
-    sidebar.classList.toggle('open');
-});
