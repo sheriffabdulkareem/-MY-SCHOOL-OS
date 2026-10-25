@@ -9,7 +9,38 @@
 <link rel="stylesheet" href="css/colors.css"><link rel="stylesheet" href="css/dark-mode.css"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css">
 <style>
 body{background:#f6f8fc}.app-shell{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:250px;background:#fff;border-right:1px solid #e9edf5;padding:22px 14px;z-index:10}.side-link{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:10px;color:#566078;text-decoration:none;margin:4px 0}.side-link.active,.side-link:hover{background:#eef4ff;color:var(--color-primary);font-weight:600}.main{margin-left:250px;padding:28px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.metric{background:#fff;border:1px solid #e9edf5;border-radius:16px;padding:20px}.metric .icon{font-size:22px}.metric h2{margin:12px 0 4px;font-weight:800}.panel{background:#fff;border:1px solid #e9edf5;border-radius:16px;padding:20px;margin-top:20px}.table-wrap{overflow:auto}.section-view{display:none}.section-view.active{display:block}.brand-mini{font-weight:800;font-size:22px;padding:8px 12px 22px}.form-control,.form-select{min-height:44px}.toast-msg{position:fixed;right:20px;bottom:20px;z-index:1000}.mobile-toggle{display:none}@media(max-width:900px){.sidebar{width:72px}.brand-mini span,.side-link span{display:none}.main{margin-left:72px}.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.sidebar{display:none}.main{margin-left:0;padding:18px}.cards{grid-template-columns:1fr}.mobile-toggle{display:inline-block}}
-</style>
+
+@media (max-width: 600px) {
+
+    .sidebar {
+
+        display: block;
+
+        width: 250px;
+
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+
+        z-index: 1050;
+
+    }
+
+    .sidebar.open {
+
+        transform: translateX(0);
+
+    }
+
+    .mobile-toggle {
+
+        display: inline-block;
+
+    }
+
+}
+ 
+ </style>
 </head>
 <body>
 <div class="app-shell">
