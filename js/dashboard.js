@@ -23,5 +23,31 @@ $('#logout').addEventListener('click',async()=>{await api('/api/auth/logout',{me
 init();
 
 
+const mobileMenu = document.getElementById('mobileMenu');
+
+const sidebar = document.querySelector('.sidebar');
+
+mobileMenu.addEventListener('click', () => {
+
+    sidebar.classList.toggle('open');
+
+});
+
+document.querySelectorAll('.side-link').forEach(a => {
+
+    a.addEventListener('click', e => {
+
+        e.preventDefault();
+
+        showSection(a.dataset.section);
+
+        sidebar.classList.remove('open');
+
+    });
+
+});
+
+
+
 
 
