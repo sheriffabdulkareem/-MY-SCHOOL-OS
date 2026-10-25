@@ -21,3 +21,20 @@ $('#teacherForm').addEventListener('submit',async e=>{e.preventDefault();const b
 $('#feeForm').addEventListener('submit',async e=>{e.preventDefault();const body=Object.fromEntries(new FormData(e.target));try{await api('/api/fees',{method:'POST',body:JSON.stringify(body)});bootstrap.Modal.getInstance($('#feeModal')).hide();e.target.reset();toast('Payment recorded successfully');await loadFees();await loadDashboard()}catch(err){toast(err.message,true)}});
 $('#logout').addEventListener('click',async()=>{await api('/api/auth/logout',{method:'POST'});location.href='index.html'});
 init();
+
+
+
+
+window.showSection=showSection;
+
+document.querySelectorAll('.side-link').forEach(a=>a.addEventListener('click',e=>{
+    e.preventDefault();
+    showSection(a.dataset.section);
+}));
+
+const mobileMenu = $('#mobileMenu');
+const sidebar = document.querySelector('.sidebar');
+
+mobileMenu.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+});
